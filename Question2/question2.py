@@ -1,6 +1,7 @@
 import os
 import binascii
 
+from cryptography.hazmat.backends.openssl.backend import backend
 from cryptography.hazmat.primitives.ciphers import (
     Cipher, algorithms, modes
 )
@@ -40,7 +41,7 @@ def read_dictionary():
     plaintext = plaintext[0:16]
 
     ciphertext = input("Enter ciphertext here: ")
-    ciphertext = ciphertext[0:30]
+    ciphertext = ciphertext[0:32]
 
     for x in fp:
         set_length(x, plaintext, ciphertext)
